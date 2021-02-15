@@ -86,7 +86,13 @@
 
 24) SELECT CONCAT(first_name, ' ', last_name) AS full_name
     FROM actor
-    WHERE last_name LIKE '%SON%'
+    WHERE last_name LIKE '%SON'
     ORDER BY first_name;
 
-25)  
+25) SELECT `name`, count(`name`) as frequency
+    FROM film_category 
+    JOIN category
+    ON category.category_id = film_category.category_id
+    GROUP BY `name`
+    ORDER BY frequency desc
+    LIMIT 1;

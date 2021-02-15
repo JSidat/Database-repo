@@ -1,0 +1,99 @@
+1)  SELECT COUNT(ID) FROM city
+    WHERE CountryCode = 'USA';
+
+2) SELECT Population, LifeExpectancy
+   FROM country
+   WHERE Code = 'ARG';
+
+3) SELECT LifeExpectancy FROM country
+   WHERE LifeExpectancy IS NOT NULL
+   ORDER BY LifeExpectancy desc
+   LIMIT 1;
+
+4) SELECT c.Name
+   FROM city c
+   LEFT JOIN country o
+   ON c.ID = o.Capital
+   WHERE c.ID = 653;
+
+
+
+5) SELECT l.language
+   FROM countrylanguage l
+   LEFT JOIN country c
+   ON l.CountryCode = c.Code
+   WHERE Region = 'Southeast Asia';
+
+
+6) SELECT Name FROM city
+   WHERE Name LIKE 'F%'
+   LIMIT 25;
+
+7) SELECT COUNT(ID)
+   FROM city
+   WHERE CountryCode ='CHN';
+
+8) SELECT Name FROM city
+   WHERE Population IS NOT NULL
+   ORDER BY Population asc
+   LIMIT 1;
+
+9) SELECT COUNT(Code)
+   FROM country;
+
+10) SELECT Name FROM country
+    ORDER BY Population desc
+    LIMIT 10;
+
+11) SELECT Name FROM city
+    WHERE CountryCode = 'JPN'
+    ORDER BY Population desc
+    LIMIT 5;
+
+12) SELECT Name, Code
+    FROM country
+    WHERE HeadOfState = 'Elisabeth II';
+
+13) SELECT Name, Population/SurfaceArea AS PopulationDensity
+    FROM country
+    ORDER BY PopulationDensity desc
+    LIMIT 10;
+
+14) SELECT DISTINCT Language
+    FROM countrylanguage;
+
+15) SELECT Name, GNP 
+    FROM country
+    ORDER BY GNP desc
+    LIMIT 10;
+
+
+16) SELECT `name`, count(countrycode) as frequency
+    FROM countrylanguage
+    JOIN country
+    ON country.code = countrylanguage.countrycode
+    GROUP BY countrycode
+    ORDER BY frequency desc
+    LIMIT 10;
+
+17) SELECT c.Name 
+    FROM country c
+    JOIN countrylanguage l
+    ON c.Code = l.CountryCode
+    WHERE Language = 'German' AND Percentage > 50.00;
+
+18) SELECT Name 
+    FROM country
+    WHERE LifeExpectancy IS NOT NULL
+    ORDER BY LifeExpectancy asc
+    LIMIT 1;
+
+19) SELECT COUNT(Code) AS Total, GovernmentForm
+    FROM country
+    GROUP BY GovernmentForm
+    ORDER BY Total desc
+    LIMIT 3;
+
+20) SELECT COUNT(Code)
+    FROM country
+    WHERE IndepYear IS NOT NULL;

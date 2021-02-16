@@ -75,8 +75,7 @@
     FROM staff 
     WHERE staff_id = 2;
 
-21) SELECT film_info FROM actor_info
-    WHERE first_name = 'Fred' AND last_name = 'Costner';
+21) 
 
 22) SELECT DISTINCT COUNT(country_id) FROM country;
  
